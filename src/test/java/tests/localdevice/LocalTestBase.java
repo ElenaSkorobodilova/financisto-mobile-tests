@@ -13,7 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.*;
 
 public class LocalTestBase {
-    private final TestSteps mySteps = new TestSteps();
+    final TestSteps mySteps = new TestSteps();
 
     @BeforeAll
     public static void setup() {
