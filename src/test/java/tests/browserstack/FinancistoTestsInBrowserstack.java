@@ -1,4 +1,4 @@
-package tests.localdevice;
+package tests.browserstack;
 
 import helpers.Constants;
 import io.qameta.allure.*;
@@ -6,16 +6,16 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class FinancistoTestsInLocalEmulator extends LocalTestBase {
+public class FinancistoTestsInBrowserstack extends TestBase {
 
     @Test
-    @Tag("local")
     @AllureId("7208")
     @Epic("UsersStory")
     @Feature("Accounts")
     @Story("Transactions")
     @DisplayName("Выполнение проводки по счёту")
     @Owner("allure8")
+    @Tag("browserstack")
     public void addTransactionTest() {
         mySteps.clickOnFirstAccount();
         mySteps.selectTransaction();
@@ -32,7 +32,7 @@ public class FinancistoTestsInLocalEmulator extends LocalTestBase {
     @Story("Create")
     @DisplayName("Добавление счёта c ненулевым остатком")
     @Owner("allure8")
-    @Tag("local")
+    @Tag("browserstack")
     public void addAccountTest() {
         mySteps.clickAddButton();
         mySteps.inputTextInField("Test account");
@@ -51,7 +51,7 @@ public class FinancistoTestsInLocalEmulator extends LocalTestBase {
     @Story("Create")
     @DisplayName("Добавление счёта c нулевым остатком")
     @Owner("allure8")
-    @Tag("local")
+    @Tag("browserstack")
     public void addEmptyAccountTest() {
         mySteps.clickAddButton();
         mySteps.inputTextInField("Test account");
@@ -69,7 +69,7 @@ public class FinancistoTestsInLocalEmulator extends LocalTestBase {
     @Story("Gets")
     @DisplayName("Получение отчёта по счёту. За период")
     @Owner("allure8")
-    @Tag("local")
+    @Tag("browserstack")
     public void reportTest() {
         mySteps.clickOnFirstAccount();
         mySteps.selectTransaction();
@@ -89,7 +89,7 @@ public class FinancistoTestsInLocalEmulator extends LocalTestBase {
     @Story("Edit")
     @DisplayName("Редактирование счёта. Изменение названия")
     @Owner("allure8")
-    @Tag("local")
+    @Tag("browserstack")
     public void editNameAccountTest() {
         mySteps.clickOnFirstAccount();
         mySteps.selectEdit();
@@ -105,7 +105,7 @@ public class FinancistoTestsInLocalEmulator extends LocalTestBase {
     @Story("Edit")
     @DisplayName("Редактирование счёта. Изменение начальной суммы")
     @Owner("allure8")
-    @Tag("local")
+    @Tag("browserstack")
     public void editAmountTest() {
         mySteps.clickOnFirstAccount();
         mySteps.selectBalance();
@@ -122,7 +122,7 @@ public class FinancistoTestsInLocalEmulator extends LocalTestBase {
     @Story("Delete")
     @DisplayName("Удаление счёта")
     @Owner("allure8")
-    @Tag("local")
+    @Tag("browserstack")
     public void deleteAccountTest() {
         mySteps.clickOnFirstAccount();
         mySteps.selectDelete();

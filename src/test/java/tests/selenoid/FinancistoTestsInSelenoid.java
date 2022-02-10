@@ -1,12 +1,13 @@
-package tests.localdevice;
+package tests.selenoid;
 
 import helpers.Constants;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.localdevice.LocalTestBase;
 
-public class FinancistoTestsInLocalEmulator extends LocalTestBase {
+public class FinancistoTestsInSelenoid extends LocalTestBase {
 
     @Test
     @Tag("local")

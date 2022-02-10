@@ -1,23 +1,23 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import helpers.TestFileUtils;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import tests.config.LocalDeviceConfig;
+import tests.config.SelenoidConfig;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class LocalMobileDriver implements WebDriverProvider {
-    static LocalDeviceConfig testConfig =
-            ConfigFactory.create(LocalDeviceConfig.class);
+public class SelenoidMobileDriver implements WebDriverProvider {
+    static SelenoidConfig testConfig =
+            ConfigFactory.create(SelenoidConfig.class);
 
     public static URL getLocalDeviceUrl() {
         try {
-            return new URL(testConfig.getLocalDeviceUrl());
+            return new URL(String.format("https://%s:%s@%s", testConfig.login(),
+                    testConfig.password(), testConfig.testUrl()));
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -26,13 +26,14 @@ public class LocalMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
-        desiredCapabilities.setCapability("platformName", "android");
-        desiredCapabilities.setCapability("deviceName", testConfig.getDevice());
-        desiredCapabilities.setCapability("version", testConfig.getOSVersion());
+        desiredCapabilities.setCapability("platformName", "Android");
+        desiredCapabilities.setCapability("deviceName", "android");
+        desiredCapabilities.setCapability("version", "8.1");
         desiredCapabilities.setCapability("locale", "en");
         desiredCapabilities.setCapability("language", "en");
-        desiredCapabilities.setCapability("app",
-                TestFileUtils.getAbsolutePath("src/test/resources/apk/financisto_v2.0.2_apkpure.com.apk"));
+        desiredCapabilities.setCapability("enableVNC", true);
+        desiredCapabilities.setCapability("enableVideo", true);
+        desiredCapabilities.setCapability("app", testConfig.apkUrl());
 
         return new AndroidDriver(getLocalDeviceUrl(), desiredCapabilities);
     }
