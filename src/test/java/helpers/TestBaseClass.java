@@ -22,8 +22,8 @@ public class TestBaseClass {
         mySteps.clickAddButton();
         mySteps.selectCurrency();
         mySteps.submitOk();
-        back();
-        back();
+      //  back();
+     //   back();
         mySteps.clickOnAccounts();
         mySteps.clickAddButton();
         mySteps.inputTextInField("My First Account");
