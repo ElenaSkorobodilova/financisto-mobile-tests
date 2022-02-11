@@ -31,8 +31,8 @@ public class LocalMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("version", testConfig.getOSVersion());
         desiredCapabilities.setCapability("locale", "en");
         desiredCapabilities.setCapability("language", "en");
-        desiredCapabilities.setCapability("app",
-                TestFileUtils.getAbsolutePath(testConfig.getApp()));
+//        desiredCapabilities.setCapability("app",
+//                TestFileUtils.getAbsolutePath(testConfig.getApp()));
 
         return new AndroidDriver(getLocalDeviceUrl(), desiredCapabilities);
     }
