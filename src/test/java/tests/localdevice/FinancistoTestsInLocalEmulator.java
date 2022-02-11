@@ -1,6 +1,6 @@
 package tests.localdevice;
 
-import helpers.Constants;
+import tests.Constants;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

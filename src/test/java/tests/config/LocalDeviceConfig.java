@@ -18,4 +18,7 @@ public interface LocalDeviceConfig extends Config {
     @Key("os_version")
     @DefaultValue("9.0")
     String getOSVersion();
+
+    @Key("app")
+    String getApp();
 }

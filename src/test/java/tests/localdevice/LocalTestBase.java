@@ -4,17 +4,18 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.LocalMobileDriver;
 import helpers.Attach;
-import helpers.TestBaseClass;
-import helpers.TestSteps;
+import org.junit.jupiter.api.BeforeEach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import tests.TestSteps;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class LocalTestBase {
-    public final TestSteps mySteps = new TestSteps();
+
+    TestSteps mySteps = new TestSteps();
+
     @BeforeAll
     public static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
@@ -28,7 +29,6 @@ public class LocalTestBase {
     public void startDriver() {
         open();
         prepareApp();
-        back();
     }
 
     private void prepareApp() {
@@ -39,8 +39,7 @@ public class LocalTestBase {
         mySteps.clickAddButton();
         mySteps.selectCurrency();
         mySteps.submitOk();
-        back();
-   //     back();
+        mySteps.returnTo("Accounts");
         mySteps.clickOnAccounts();
         mySteps.clickAddButton();
         mySteps.inputTextInField("My First Account");

@@ -32,7 +32,7 @@ public class LocalMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("locale", "en");
         desiredCapabilities.setCapability("language", "en");
         desiredCapabilities.setCapability("app",
-                TestFileUtils.getAbsolutePath("src/test/resources/apk/financisto_v2.0.2_apkpure.com.apk"));
+                TestFileUtils.getAbsolutePath(testConfig.getApp()));
 
         return new AndroidDriver(getLocalDeviceUrl(), desiredCapabilities);
     }

@@ -3,17 +3,19 @@ package tests.selenoid;
 import com.codeborne.selenide.Configuration;
 import drivers.SelenoidMobileDriver;
 import helpers.Attach;
-import helpers.TestBaseClass;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import tests.TestSteps;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static helpers.Attach.getSessionId;
 
-public class SelenoidTestBase extends TestBaseClass {
+public class SelenoidTestBase {
+
+    TestSteps mySteps = new TestSteps();
+
     @BeforeAll
     public static void setup() {
         addListener("AllureSelenide", new AllureSelenide());
@@ -23,6 +25,28 @@ public class SelenoidTestBase extends TestBaseClass {
         Configuration.timeout = 10000;
     }
 
+    @BeforeEach
+    public void startDriver() {
+        open();
+        prepareApp();
+    }
+
+    private void prepareApp() {
+        mySteps.submitOk();
+        mySteps.clickOnMainMenu();
+        mySteps.clickOnEntities();
+        mySteps.clickOnCurrencies();
+        mySteps.clickAddButton();
+        mySteps.selectCurrency();
+        mySteps.submitOk();
+        mySteps.returnTo("Accounts");
+        mySteps.clickOnAccounts();
+        mySteps.clickAddButton();
+        mySteps.inputTextInField("My First Account");
+        mySteps.clickOnCurrencyField();
+        mySteps.submitSelection();
+        mySteps.submitActions();
+    }
 
     @AfterEach
     public void afterEach() {

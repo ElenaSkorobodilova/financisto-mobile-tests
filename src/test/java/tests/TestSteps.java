@@ -1,8 +1,11 @@
-package helpers;
+package tests;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.MobileBy;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Assertions;
+
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -113,6 +116,7 @@ public class TestSteps {
     }
 
     public void clickOn(String selection) {
+        Assertions.assertTrue(checkElement(selection), "Ошибка! Элемент не найден!");
         $(MobileBy.xpath(String.format("//*[@text='%s']", selection))).click();
     }
 
@@ -146,6 +150,28 @@ public class TestSteps {
     public void checkAccountNotExist() {
         $(MobileBy.id("android:id/empty"))
                 .shouldBe(Condition.exactText("You should start with creating an account. Tap the '+' at the bottom…"));
+    }
+
+    @Step("Возвращаемся на вкладку '{searchName}'")
+    public void returnTo(String searchName) {
+        boolean result = checkElement(searchName);
+        while (!result) {
+            back();
+            result = checkElement(searchName);
+        }
+    }
+
+    private boolean checkElement(String searchName) {
+        boolean check = false;
+        SelenideElement element;
+        try {
+            element = $(MobileBy.xpath(String.format("//*[@text='%s']", searchName)));
+            check =  element.shouldBe(Condition.enabled).exists();
+        } catch(Exception e) {
+            check = false; //просто ловим Exception до тех пор, пока элемент не найдётся
+        } finally {
+            return check;
+        }
     }
 }
 

@@ -1,12 +1,12 @@
 package tests.browserstack;
 
-import helpers.Constants;
+import tests.Constants;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class FinancistoTestsInBrowserstack extends TestBase {
+public class FinancistoTestsInBrowserstack extends BrowserstackTestBase {
 
     @Test
     @AllureId("7208")

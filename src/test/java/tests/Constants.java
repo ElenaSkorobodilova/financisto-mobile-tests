@@ -1,4 +1,4 @@
-package helpers;
+package tests;
 
 public class Constants {
     // Некоторые элементы приходится искать некрасивым способом.
