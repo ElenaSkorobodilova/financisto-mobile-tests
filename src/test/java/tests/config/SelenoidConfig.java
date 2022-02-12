@@ -17,7 +17,6 @@ public interface SelenoidConfig extends Config {
     String password();
 
     @Key("apk_url")
-    @DefaultValue("https://github.com/ElenaSkorobodilova/financisto-mobile-tests/tree/main/src/test/resources/apk/financisto_v2.0.2_apkpure.com.apk")
     String apkUrl();
 
     @Key("device")
