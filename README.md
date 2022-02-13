@@ -28,5 +28,31 @@
 - local.properties
 
 ## Ограничения проекта
-Файл apk взят из открытого источника. Реализована собственными силами некая сборка, доступная к скачиванию тестами из Github, приложение также установлено на сервер browserstack. Но запуск тестов на удалённых серверах происходит с ошибками.<br/></br> 
+Файл apk взят из открытого источника. Реализована собственными силами некая сборка, доступная к скачиванию тестами из Github, приложение также установлено на сервер browserstack. Но запуск тестов на удалённых серверах происходит с ошибками.<br/> 
 Поэтому рекомендован локальный прогон тестов.
+
+#### Пример запуска из командной строки
+```bash
+gradle clean local
+```
+
+## Этапы реализации
+> <a target="_blank" href="https://allure.autotests.cloud/project/1000/dashboards/1881"> Проект в Allure Test Ops</a>
+### Формирование списка необходимых проверок в Allure Test Ops
+<img src="/images/manual_list.png"><br/></br>
+Кейсы разбиты по группам:
+- Epic = UserStory
+- Feature = Accounts (работа со счетами), Reports (формирование отчётов)
+- Story = Transactions, Create, Edit, Delete (для Accounts), Gets (для Reports)
+
+### Импорт тест-кейсов в IntelliJ IDEA
+<img src="/images/import cases from allure to.png"><br/></br>
+
+### Разработка кода, настройка сборки, запуск на локальном компьютере
+Два варианта настройки параметра в localdevice.properties
+- по умолчанию: local_device.url=http://127.0.0.1:4723/wd/hub
+- c помощью запуска сервиса **ngrok**: local_device.url=http://6459-176-213-208-102.ngrok.io/wd/hub
+
+### Импорт результатов прогонов из IntelliJ IDEA в Allure Test Ops
+<img src="/images/dashboard.png">
+Итоговые результаты сгруппированы в Dashboard по Feature и Story для удоства локализации дефектов по основным функциям приложения.
