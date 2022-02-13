@@ -54,5 +54,5 @@ gradle clean local
 - c помощью запуска сервиса **ngrok**: local_device.url=http://6459-176-213-208-102.ngrok.io/wd/hub
 
 ### Импорт результатов прогонов из IntelliJ IDEA в Allure Test Ops
-<img src="/images/dashboard.png">
+
 Итоговые результаты сгруппированы в Dashboard по Feature и Story для удоства локализации дефектов по основным функциям приложения.
