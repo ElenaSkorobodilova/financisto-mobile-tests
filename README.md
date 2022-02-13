@@ -1,6 +1,7 @@
 # financisto-mobile-tests
 Учебный проект реализации автотестирования мобильного приложения.<br/></br>
 ![This is an image](/icons/Java.png)![This is an image](/icons/Gradle.png)![This is an image](/icons/Intelij_IDEA.png)![This is an image](/icons/Selenide.png)![This is an image](/icons/Selenoid.png)![This is an image](/icons/JUnit5.png)![This is an image](/icons/Allure_Report.png)![This is an image](/icons/AllureTestOps.png)
+<!-- [This is an image](/icons/appium.png)![This is an image](/icons/androidstudio.png) -->
 
 ## Описание проекта
 В качестве объекта тестирование выбрано мобильное приложение приложение для учета личных финансов с открытым исходным кодом financisto.<br/></br>
@@ -23,5 +24,11 @@
 ## Особенности реализации
 Реализован полный цикл работы с тест-кейсами в Allure Test Ops. От первоначального описания списка необходимых проверок до выгрузки результатов тестирования в сводный отчёт и формирования статистических Dashboard.<br/></br>
 Для описания шагов тест-кейсов в java-коде использован степовой подход.
+Реализована возможность настройки параметров запуска через соответствующие файлы конфигурации
+- browserstack.properties
+- selenoid.properties
+- local.properties
 
-----Использована настройка трёх вариантов конфигурации запуска.
+## Ограничения проекта
+Файл apk взят из открытого источника. Реализована собственными силами некая сборка, доступная к скачиванию тестами из Github, но скачивание всё равно не происходит. Приложение также установлено на сервер browserstack, но бесплатного времени в App Live на отладку тестов не хватило.
+Поэтому рекомендован локальный прогон тестов.
