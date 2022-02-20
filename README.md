@@ -55,4 +55,8 @@ gradle clean local
 
 ### 4. Импорт результатов прогонов из IntelliJ IDEA в Allure Test Ops
 <img src="/images/dashboard.png">
-Итоговые результаты сгруппированы в Dashboard по Feature и Story для удоства локализации дефектов по основным функциям приложения.
+Итоговые результаты сгруппированы в Dashboard по Feature и Story для удоства локализации дефектов по основным функциям приложения.<br/><br/>  
+
+
+:heart: <a target="_blank" href="https://qa.guru">qa.guru</a><br/>
+:blue_heart: <a target="_blank" href="https://t.me/qa_automation">t.me/qa_automation</a>
