@@ -61,7 +61,7 @@ gradle clean local
 Итоговые результаты сгруппированы в Dashboard по Feature и Story для удоства локализации дефектов по основным функциям приложения.<br/><br/>  
 
 ### Пример видеозаписи прохождения теста
-![This is an image](/images/mobile-test.gif)
+![This is an image](/images/mobile_test.gif)
 
 
 :heart: <a target="_blank" href="https://qa.guru">qa.guru</a><br/>
