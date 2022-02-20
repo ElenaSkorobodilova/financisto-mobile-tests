@@ -60,6 +60,9 @@ gradle clean local
 <img src="/images/dashboard.png">
 Итоговые результаты сгруппированы в Dashboard по Feature и Story для удоства локализации дефектов по основным функциям приложения.<br/><br/>  
 
+### Пример видеозаписи прохождения теста
+![This is an image](/images/mobile-test.gif)
+
 
 :heart: <a target="_blank" href="https://qa.guru">qa.guru</a><br/>
 :blue_heart: <a target="_blank" href="https://t.me/qa_automation">t.me/qa_automation</a>
