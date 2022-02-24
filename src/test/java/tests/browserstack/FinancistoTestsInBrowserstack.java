@@ -1,6 +1,6 @@
 package tests.browserstack;
 
-import tests.Constants;
+import tests.Locators;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -19,7 +19,7 @@ public class FinancistoTestsInBrowserstack extends BrowserstackTestBase {
     public void addTransactionTest() {
         mySteps.clickOnFirstAccount();
         mySteps.selectTransaction();
-        mySteps.clickMinusToPlus(Constants.minusXpath);
+        mySteps.clickMinusToPlus(Locators.minusXpath);
         mySteps.amountInput("650");
         mySteps.saveChanges();
         mySteps.checkSumma("650.00 Dhs.");
@@ -73,12 +73,12 @@ public class FinancistoTestsInBrowserstack extends BrowserstackTestBase {
     public void reportTest() {
         mySteps.clickOnFirstAccount();
         mySteps.selectTransaction();
-        mySteps.clickMinusToPlus(Constants.minusXpath);
+        mySteps.clickMinusToPlus(Locators.minusXpath);
         mySteps.amountInput("1500");
         mySteps.saveChanges();
         mySteps.clickOnReports();
         mySteps.clickOnByPeriod();
-        mySteps.checkReportPageTitle(Constants.reportPageTitle);
+        mySteps.checkReportPageTitle(Locators.reportPageTitle);
         mySteps.checkReportSelection("+1,500.00 Dhs.");
     }
 
@@ -109,7 +109,7 @@ public class FinancistoTestsInBrowserstack extends BrowserstackTestBase {
     public void editAmountTest() {
         mySteps.clickOnFirstAccount();
         mySteps.selectBalance();
-        mySteps.clickMinusToPlus(Constants.minusInAmountBalance);
+        mySteps.clickMinusToPlus(Locators.minusInAmountBalance);
         mySteps.amountInput("1000");
         mySteps.saveChanges();
         mySteps.checkSumma("1,000.00 Dhs.");

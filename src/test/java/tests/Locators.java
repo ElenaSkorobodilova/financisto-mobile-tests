@@ -1,6 +1,6 @@
 package tests;
 
-public class Constants {
+public class Locators {
     // Некоторые элементы приходится искать некрасивым способом.
     // Для читабельности кода вынесла длинные пути в константы
     public static String minusXpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/" +

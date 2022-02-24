@@ -37,7 +37,7 @@ public class TestSteps {
 
     @Step("Выбираем валюту по умолчанию")
     public void selectCurrency() {
-        $(MobileBy.xpath(String.format("//*[@text='%s']", Constants.defaultCurrency))).click();
+        $(MobileBy.xpath(String.format("//*[@text='%s']", Locators.defaultCurrency))).click();
     }
 
     @Step("Переходим на вкладку Accounts")
@@ -141,7 +141,7 @@ public class TestSteps {
 
     @Step("Сумма в поле отчёта = {summa}")
     public void checkReportSelection(String summa) {
-        $(MobileBy.xpath(Constants.xp)).click();
+        $(MobileBy.xpath(Locators.xp)).click();
         $(MobileBy.id("com.bluecatsoftware.financisto:id/right_center"))
                 .shouldBe(Condition.exactText(summa));
     }
