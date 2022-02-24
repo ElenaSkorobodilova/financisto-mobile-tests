@@ -173,5 +173,23 @@ public class TestSteps {
             return check;
         }
     }
+
+    @Step("Подготовка")
+    public void prepareApp() {
+        submitOk();
+        clickOnMainMenu();
+        clickOnEntities();
+        clickOnCurrencies();
+        clickAddButton();
+        selectCurrency();
+        submitOk();
+        returnTo("Accounts");
+        clickOnAccounts();
+        clickAddButton();
+        inputTextInField("My First Account");
+        clickOnCurrencyField();
+        submitSelection();
+        submitActions();
+    }
 }
 

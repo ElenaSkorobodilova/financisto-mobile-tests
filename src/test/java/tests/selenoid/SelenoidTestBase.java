@@ -28,24 +28,7 @@ public class SelenoidTestBase {
     @BeforeEach
     public void startDriver() {
         open();
-        prepareApp();
-    }
-
-    private void prepareApp() {
-        mySteps.submitOk();
-        mySteps.clickOnMainMenu();
-        mySteps.clickOnEntities();
-        mySteps.clickOnCurrencies();
-        mySteps.clickAddButton();
-        mySteps.selectCurrency();
-        mySteps.submitOk();
-        mySteps.returnTo("Accounts");
-        mySteps.clickOnAccounts();
-        mySteps.clickAddButton();
-        mySteps.inputTextInField("My First Account");
-        mySteps.clickOnCurrencyField();
-        mySteps.submitSelection();
-        mySteps.submitActions();
+        mySteps.prepareApp();
     }
 
     @AfterEach

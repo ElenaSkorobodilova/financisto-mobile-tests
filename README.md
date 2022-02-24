@@ -1,5 +1,5 @@
 # financisto-mobile-tests
-![This is an image](/icons/Java.png)![This is an image](/icons/Gradle.png)![This is an image](/icons/Intelij_IDEA.png)![This is an image](/icons/Selenide.png)![This is an image](/icons/Selenoid.png)![This is an image](/icons/JUnit5.png)![This is an image](/icons/Allure_Report.png)![This is an image](/icons/AllureTestOps.png)![This is an image](/icons/appium.png) ![This is an image](/icons/androidstudio.png)
+![This is an image](/design/icons/Java.png)![This is an image](/design/icons/Gradle.png)![This is an image](/design/icons/Intelij_IDEA.png)![This is an image](/design/icons/Selenide.png)![This is an image](/design/icons/Selenoid.png)![This is an image](/design/icons/JUnit5.png)![This is an image](/design/icons/Allure_Report.png)![This is an image](/design/icons/AllureTestOps.png)![This is an image](/design/icons/appium.png) ![This is an image](/design/icons/androidstudio.png)
 ## Описание проекта
 Учебный проект реализации автотестирования мобильного приложения.<br/></br>
 В качестве объекта тестирование выбрано мобильное приложение приложение для учета личных финансов с открытым исходным кодом **financisto**.<br/></br>
@@ -61,7 +61,7 @@ gradle clean local
 Итоговые результаты сгруппированы в Dashboard по Feature и Story для удоства локализации дефектов по основным функциям приложения.<br/><br/>  
 
 ### Пример видеозаписи прохождения теста на эмуляторе мобильного устройства
-![This is an image](/images/mobile_test.gif)
+![This is an image](/design/images/mobile_test.gif)
 
 
 :heart: <a target="_blank" href="https://qa.guru">qa.guru</a><br/>
